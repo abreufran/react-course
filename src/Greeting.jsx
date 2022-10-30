@@ -27,3 +27,16 @@ export function Greeting({title, salary}) {
     </div>
   );
 }
+
+export function UserCard(props) {
+  console.log(props);  
+  return <div>
+    <h1>{props.name}</h1>
+    <p>💵{props.salary}</p>
+    <p>{props.married ? 'Married' : 'Single'}</p>
+    <ul>
+      <li>Street: {props.address.street}</li>
+      <li>Department: {props.address.department}</li>
+    </ul>
+  </div>
+}
