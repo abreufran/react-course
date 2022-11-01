@@ -3,9 +3,15 @@ import ReactDOM from "react-dom/client";
 import { Button } from "./Button";
 import { Greeting, UserCard } from "./Greeting";
 import { TaskCard } from "./Task";
+import { Saludar } from "./Saludar";
+import { Posts } from "./Posts";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
+
+const handleChange = (e) => {
+  console.log(e.target.value);
+};
 
 root.render(
   <>
@@ -28,5 +34,37 @@ root.render(
     <Button text="Go to" />
 
     <TaskCard ready={false} />
+
+    <Saludar />
+
+    <input
+      id="inputId"
+      onChange={function (e) {
+        console.log(e.target.id);
+        console.log(e.target.value);
+        console.log("escribiendo en el input");
+      }}
+    />
+
+    <input id="inputId2" onChange={handleChange} />
+
+    <input
+      id="inputId3"
+      onDoubleClick={function (e) {
+        console.log("Doble clic");
+      }}
+    />
+
+    <form
+      onSubmit={(e) => {
+        e.preventDefault(); //Quita la redireccion por defecto.
+        console.log("Enviando formulario.");
+      }}
+    >
+      <h1>Registro de Usuario</h1>
+      <button>Send</button>
+
+      <Posts />
+    </form>
   </>
 );

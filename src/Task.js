@@ -10,7 +10,7 @@ export function TaskCard({ ready }) {
         <h1 style={titleStyles}>Mi tarea</h1>
         <p>Realizada</p>
       </div>
-      <div className="card">
+      <div className={ready ? "bg-red" : "bg-green"}>
         <h1 style={titleStyles}>Mi tarea</h1>
         <p>Realizada</p>
       </div>
